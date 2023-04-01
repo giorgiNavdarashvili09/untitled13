@@ -1,4 +1,5 @@
 import 'package:audioplayers/audioplayers.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -54,7 +55,6 @@ class Music1 extends StatefulWidget {
 }
 
 class _Music1State extends State<Music1> {
-
   final player = AudioPlayer();
 
   Future setMusic({required String path}) {
@@ -71,6 +71,7 @@ class _Music1State extends State<Music1> {
           GestureDetector(
             onTap: () async {
               await setMusic(path: "music/bad_guy.mp3");
+
               player.play(player.source!);
             },
             child: Container(
@@ -103,62 +104,76 @@ class _Music1State extends State<Music1> {
               ),
             ),
           ),
-          Container(
-            color: Colors.purpleAccent,
-            margin: EdgeInsets.all(16),
-            child: Row(
-              children: [
-                Container(
-                  width: 100,
-                  padding: EdgeInsets.all(5),
-                  child: Image(
-                    image: NetworkImage(
-                        "https://media1.popsugar-assets.com/files/thumbor/m6XtraBKv2sAYH9uABOpdB4SfDE/244x171:1646x1573/fit-in/500x500/filters:format_auto-!!-:strip_icc-!!-/2019/12/12/833/n/1922398/fa87d3a65df28e5bf254f9.58994723_/i/Ariana-Grande.jpg"),
+          GestureDetector(
+            onTap: () async {
+              await setMusic(path: "music/side_to_side.mp3");
+
+              player.play(player.source!);
+            },
+            child: Container(
+              color: Colors.purpleAccent,
+              margin: EdgeInsets.all(16),
+              child: Row(
+                children: [
+                  Container(
+                    width: 100,
+                    padding: EdgeInsets.all(5),
+                    child: Image(
+                      image: NetworkImage(
+                          "https://media1.popsugar-assets.com/files/thumbor/m6XtraBKv2sAYH9uABOpdB4SfDE/244x171:1646x1573/fit-in/500x500/filters:format_auto-!!-:strip_icc-!!-/2019/12/12/833/n/1922398/fa87d3a65df28e5bf254f9.58994723_/i/Ariana-Grande.jpg"),
+                    ),
                   ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Ariana Grande",
-                      style: TextStyle(fontSize: 30, color: Colors.black),
-                    ),
-                    Text(
-                      "Side to side",
-                      style: TextStyle(fontSize: 20, color: Colors.black),
-                    ),
-                  ],
-                )
-              ],
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Ariana Grande",
+                        style: TextStyle(fontSize: 30, color: Colors.black),
+                      ),
+                      Text(
+                        "Side to side",
+                        style: TextStyle(fontSize: 20, color: Colors.black),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
-          Container(
-            color: Colors.orange,
-            margin: EdgeInsets.all(16),
-            child: Row(
-              children: [
-                Container(
-                  width: 100,
-                  padding: EdgeInsets.all(10),
-                  child: Image(
-                    image: NetworkImage(
-                        "https://yeeeaahnetwork.com/wp-content/uploads/2022/12/Cardi-b-800x640.png"),
+          GestureDetector(
+            onTap: () async {
+              await setMusic(path: "music/up.mp3");
+
+              player.play(player.source!);
+            },
+            child: Container(
+              color: Colors.orange,
+              margin: EdgeInsets.all(16),
+              child: Row(
+                children: [
+                  Container(
+                    width: 100,
+                    padding: EdgeInsets.all(10),
+                    child: Image(
+                      image: NetworkImage(
+                          "https://yeeeaahnetwork.com/wp-content/uploads/2022/12/Cardi-b-800x640.png"),
+                    ),
                   ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Cardi B",
-                      style: TextStyle(fontSize: 30, color: Colors.red),
-                    ),
-                    Text(
-                      "Up",
-                      style: TextStyle(fontSize: 20, color: Colors.red),
-                    ),
-                  ],
-                )
-              ],
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Cardi B",
+                        style: TextStyle(fontSize: 30, color: Colors.red),
+                      ),
+                      Text(
+                        "Up",
+                        style: TextStyle(fontSize: 20, color: Colors.red),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ]));
@@ -174,7 +189,9 @@ class RegistrationForm extends StatefulWidget {
 
 class _RegistrationFormState extends State<RegistrationForm> {
   final usernameController = TextEditingController();
+
   final passwordController = TextEditingController();
+
   bool passwordHidden = true;
 
   @override
